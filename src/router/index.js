@@ -1,10 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import HomeView from '../views/HomeView.vue'
+import FaveView from '../views/FavesView.vue'
 
 const routes = [
   {
     path: '/',
-    name: 'home',
+    name: 'Home',
     component: HomeView
+  },
+  {
+    path: '/favorites',
+    name: 'Faves',
+    component: FaveView
   }
 ]
 

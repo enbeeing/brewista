@@ -1,0 +1,10 @@
+:root{
+    --main-bg-color: #fff;
+    --brew-bg-color: #fafafa;
+    --main-text-color: #000;
+    --light-text-color: #afafaf;
+/* rename the last ones */
+    --dark-accent-color: #2f4442;
+    --light-accent-color: #cdcbbf;
+    --accent-color: #fff782;
+}
