@@ -1,10 +1,17 @@
 :root{
+    --main-font: 'Segoe', sans-serif;
     --main-bg-color: #fff;
     --brew-bg-color: #fafafa;
     --main-text-color: #000;
     --light-text-color: #afafaf;
 /* rename the last ones */
-    --dark-accent-color: #2f4442;
-    --light-accent-color: #cdcbbf;
+    --dark-secondary-color: #2f4442;
+    --light-secondary-color: #cdcbbf;
     --accent-color: #fff782;
+}
+
+body {
+    margin: 0;
+    pad: 0;
+    font-family: var(--main-font);
 }
