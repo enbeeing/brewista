@@ -3,7 +3,8 @@
     --main-bg-color: #fff;
     --brew-bg-color: #f7f7f7;
     --main-text-color: #000;
-    --medium-text-color: #707070;
+    --medium-text-color: #3D3D3D;
+    /* #707070 */
     --light-text-color: #afafaf;
 /* rename the secondary ones */
     --dark-secondary-color: #2f4442;
@@ -22,5 +23,9 @@ body {
 }
 
 .home, .faves {
-    padding: 2.2rem 1.5rem;
+    padding: 2.5rem 1.5rem;
+}
+
+.home  h1, .faves  h1 {
+    margin-bottom: 4rem;
 }

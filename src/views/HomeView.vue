@@ -23,6 +23,7 @@
       </div>
     </header>
     <main>
+      <p>Previous Brews</p>
       <BrewList :brews="brews" />
     </main>
   </div>
@@ -91,7 +92,7 @@ const brews = [
 </script>
 
 <style>
-header {
+.home > header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -119,5 +120,11 @@ h1 {
 button > svg {
   color: var(--main-bg-color);
   height: 30px;
+}
+
+main > p {
+  font-size: 0.95rem;
+  color: var(--medium-text-color);
+  font-weight: bold;
 }
 </style>

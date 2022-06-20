@@ -2,6 +2,37 @@
   <article class="brew">
     <header>
       <img src="../assets/images/ColdBrew.jpg" :alt="brew.img.alt" />
+
+      <div v-if="brew.isFave" class="fave">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="34"
+          height="34"
+          viewBox="0 0 34 34"
+        >
+          <circle cx="17" cy="17" r="17" />
+          <path
+            class="a"
+            d="M3.285,5.285a4.386,4.386,0,0,1,6.2,0l1.285,1.284,1.285-1.284a4.385,4.385,0,0,1,6.2,0c1.713,1.713,1.193,4.554,0,6.2-4.375,6.046-6.557,7.487-7.487,7.487s-3.464-1.216-7.487-7.488c-1.239-1.932-1.712-4.489,0-6.2Z"
+          />
+          <path
+            class="a"
+            d="M3.285,5.285a4.386,4.386,0,0,1,6.2,0l1.285,1.284,1.285-1.284a4.385,4.385,0,0,1,6.2,0c1.713,1.713,1.193,4.554,0,6.2-4.375,6.046-6.557,7.487-7.487,7.487s-3.464-1.216-7.487-7.488c-1.239-1.932-1.712-4.489,0-6.2Z"
+          />
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="19.76"
+          height="17.364"
+          viewBox="0 0 19.76 17.364"
+        >
+          <path
+            class="a"
+            d="M3.314,5.318a4.5,4.5,0,0,1,6.363,0L11,6.636l1.319-1.317a4.5,4.5,0,0,1,6.363,0c1.757,1.757,1.224,4.673,0,6.364-4.489,6.2-6.727,7.682-7.682,7.682s-3.555-1.247-7.682-7.683c-1.271-1.982-1.757-4.606,0-6.363Z"
+            transform="translate(-1.045 -3)"
+          />
+        </svg>
+      </div>
     </header>
     <div class="brew-wrapper">
       <div class="brew-coffee">
@@ -59,10 +90,33 @@ const props = defineProps({
   margin: 1rem 0 2rem 0;
 }
 
+.brew header {
+  position: relative;
+}
+
 .brew img {
   width: 100%;
   object-fit: cover;
   max-height: 175px;
+}
+
+.brew .fave {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+.fave svg:first-child {
+  position: relative;
+  top: 0;
+}
+
+.fave svg:last-child {
+  position: absolute;
+  top: 9px;
+  left: 7px;
+  fill: var(--main-bg-color);
+  z-index: 1;
 }
 
 .brew-wrapper {
