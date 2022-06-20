@@ -22,12 +22,72 @@
         </button>
       </div>
     </header>
-    <Navbar />
+    <main>
+      <BrewList :brews="brews" />
+    </main>
   </div>
+  <Navbar />
 </template>
 
 <script setup>
 import Navbar from "../components/Navbar.vue";
+import BrewList from "../components/BrewList.vue";
+import { ref } from "vue";
+
+const brews = [
+  {
+    coffee: {
+      title: "KIENI ESPRESSO",
+      description:
+        "En frugtbombe af en espresso med aroma af brombær, solbær, stikkelbær og fyldig, olieret afslutning.",
+      process: "Washed",
+      roastProfile: "Medium",
+      varieties: ["Castilo", "Caturra"],
+      country: "Guatemala",
+    },
+    method: {
+      title: "Cold Infusion",
+      method: {
+        gram: "40g",
+        water: "200ml",
+        grind: "Coarse",
+        time: "2 timer",
+      },
+    },
+    img: {
+      name: "ColdBrew.jpg",
+      alt: "cold brew",
+    },
+    isFave: true,
+    id: 1,
+  },
+  {
+    coffee: {
+      title: "KIENI",
+      description:
+        "En frugtbombe af en espresso med aroma af brombær, solbær, stikkelbær og fyldig, olieret afslutning.",
+      process: "Washed",
+      roastProfile: "Medium",
+      varieties: ["Castilo", "Caturra"],
+      country: "Guatemala",
+    },
+    method: {
+      title: "Cold Infusion",
+      method: {
+        gram: "40g",
+        water: "200ml",
+        grind: "Coarse",
+        time: "2 timer",
+      },
+    },
+    img: {
+      name: "ColdBrew.jpg",
+      alt: "cold brew",
+    },
+    isFave: false,
+    id: 2,
+  },
+];
 </script>
 
 <style>
@@ -35,11 +95,14 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
 }
+
 h1 {
   font-weight: lighter;
+  font-size: 1.8rem;
 }
+
 .hightlight-text {
   font-weight: bold;
 }
@@ -52,6 +115,7 @@ h1 {
   height: 60px;
   width: 60px;
 }
+
 button > svg {
   color: var(--main-bg-color);
   height: 30px;

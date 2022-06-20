@@ -1,8 +1,8 @@
 <template>
   <div class="faves">
-    faves
-    <Navbar />
+    <h1>Favorites</h1>
   </div>
+  <Navbar />
 </template>
 
 <script setup>
