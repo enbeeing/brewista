@@ -30,7 +30,6 @@
           <path
             class="a"
             d="M3.314,5.318a4.5,4.5,0,0,1,6.363,0L11,6.636l1.319-1.317a4.5,4.5,0,0,1,6.363,0c1.757,1.757,1.224,4.673,0,6.364-4.489,6.2-6.727,7.682-7.682,7.682s-3.555-1.247-7.682-7.683c-1.271-1.982-1.757-4.606,0-6.363Z"
-            transform="translate(-1.045 -3)"
           />
         </svg>
       </router-link>
@@ -45,16 +44,19 @@
 .navbar nav {
   position: fixed;
   bottom: 0;
-  width: 100%;
   display: flex;
+  width: 100%;
   justify-content: space-evenly;
   align-items: center;
+  background: var(--main-bg-color);
+  box-shadow: 0 -3px 15px var(--shadow-color);
+  max-height: 60px;
 }
 
 .navbar a {
   text-decoration: none;
   color: var(--main-text-color);
-  padding: 2rem;
+  padding: 1rem;
 }
 
 a > svg {
@@ -63,5 +65,6 @@ a > svg {
 
 .navbar .router-link-active svg {
   fill: var(--main-text-color);
+  list-style: square;
 }
 </style>
