@@ -24,7 +24,7 @@ body {
 }
 
 img {
-    max-width: 100%;
+    width: 100%;
 }
 
 .home, .faves, .new-brew {
@@ -45,4 +45,36 @@ header > h3,
 /* .content-wrapper padding */
 .content-wrapper {
     padding: 2rem;
+}
+
+  /* brew icon */
+.brew-method-icon,
+.method-svg {
+  width: 35px;
+  height: 60px;
+  margin-right: 2rem;
+}
+
+
+/* for SingleBrew and SingleMethod */
+/* brew methods icons and info  */
+.brew-method {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .brew-method > p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.4rem 0.2rem 0.2rem 0.2rem;
+    font-size: 0.7rem;
+    color: var(--light-text-color);
+  }
+  
+  .method-icon {
+    height: 0.75rem;
+    width: 1rem;
+    margin-right: 0.2rem;
   }

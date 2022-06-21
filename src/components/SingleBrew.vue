@@ -22,8 +22,8 @@
     </header>
     <div class="content-wrapper">
       <div class="brew-coffee">
-        <svg class="infusion">
-          <use xlink:href="#infusion" />
+        <svg class="brew-method-icon">
+          <use :xlink:href="brew.method.svg" />
         </svg>
         <div class="brew-description">
           <h3>
@@ -94,15 +94,9 @@ const props = defineProps({
   left: 15px;
 }
 
-/* brew icon */
-.infusion {
-  width: 39px;
-  height: 66px;
-  margin-right: 2rem;
-}
-
 /* brew descriptions/content */
-.brew-coffee {
+.brew-coffee,
+.method {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -119,27 +113,5 @@ const props = defineProps({
 
 .brew h3 {
   text-transform: uppercase;
-}
-
-/* brew methods icons and info */
-.brew-method {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.brew-method > p {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 1.4rem 0.2rem 0.2rem 0.2rem;
-  font-size: 0.75rem;
-  color: var(--light-text-color);
-}
-
-.method-icon {
-  height: 0.75rem;
-  width: 1rem;
-  margin-right: 0.2rem;
 }
 </style>

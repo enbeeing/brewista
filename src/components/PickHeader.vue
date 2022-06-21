@@ -24,6 +24,7 @@ const props = defineProps({
   position: relative;
   text-align: center;
 }
+
 .new-brew button {
   border: none;
   background: none;
@@ -35,5 +36,7 @@ const props = defineProps({
 .new-brew .back {
   max-width: 100%;
   color: var(--main-text-color);
+  /* center diff later */
+  transform: translateY(-4px);
 }
 </style>

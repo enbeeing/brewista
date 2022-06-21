@@ -1,7 +1,10 @@
 <template>
   <article class="coffee">
     <header>
-      <img src="../assets/images/header-coffeecollective.jpg" alt="" />
+      <img
+        src="../assets/images/header-coffeecollective.jpg"
+        alt="coffee collective"
+      />
     </header>
     <div class="content-wrapper">
       <div class="description">
@@ -44,7 +47,7 @@
 
 <script setup>
 const props = defineProps({
-  coffee: Array,
+  coffee: Object,
 });
 
 // set dark theme on every other here
