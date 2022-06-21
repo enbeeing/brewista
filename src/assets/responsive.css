@@ -1,0 +1,11 @@
+@media screen and (min-width: 500px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #app {
+        min-width: 500px;
+    }
+}

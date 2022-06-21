@@ -44,6 +44,7 @@
 .navbar nav {
   position: fixed;
   bottom: 0;
+  left: 0;
   display: flex;
   width: 100%;
   justify-content: space-evenly;
