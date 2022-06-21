@@ -1,6 +1,6 @@
 <template>
   <header>
-    <button>
+    <button @click="router.go(-1)">
       <svg class="back">
         <use xlink:href="#arrowBack" />
       </svg>
@@ -12,11 +12,13 @@
 </template>
 
 <script setup>
-import { router } from "vue";
+import { useRouter } from "vue-router";
 
 const props = defineProps({
   title: String,
 });
+
+const router = useRouter();
 </script>
 
 <style>

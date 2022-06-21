@@ -3,7 +3,25 @@
     <header>
       <h1>It's a Great <span class="hightlight-text">Day for Coffee</span></h1>
       <div>
-        <button>
+        <router-link :to="{ name: 'Coffee' }" role="button" class="button">
+          <span class="sr-only">add episode</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              class="a"
+              d="M16.008,6V16.008m0,0V26.015m0-10.008H26.015m-10.008,0H6"
+              transform="translate(-4.1 -4.1)"
+            />
+          </svg>
+        </router-link>
+        <!-- <button>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -19,7 +37,7 @@
               transform="translate(-4 -3.5)"
             />
           </svg>
-        </button>
+        </button> -->
       </div>
     </header>
     <main>
@@ -33,7 +51,7 @@
 <script setup>
 import Navbar from "../components/Navbar.vue";
 import BrewList from "../components/BrewList.vue";
-import { ref } from "vue";
+// import { ref } from "vue";
 
 const brews = [
   {
@@ -48,6 +66,7 @@ const brews = [
     },
     method: {
       title: "Cold Infusion",
+      svg: "#infusion",
       method: {
         gram: "40g",
         water: "200ml",
@@ -74,6 +93,7 @@ const brews = [
     },
     method: {
       title: "Cold Infusion",
+      svg: "#infusion",
       method: {
         gram: "40g",
         water: "200ml",
@@ -108,15 +128,17 @@ h1 {
   font-weight: bold;
 }
 
-.home header button {
-  outline: none;
-  border: none;
+.home header .button {
   border-radius: 50%;
   background: var(--main-text-color);
   height: 60px;
   width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.button > svg,
 button > svg {
   color: var(--main-bg-color);
   height: 30px;

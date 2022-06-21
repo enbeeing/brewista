@@ -1,15 +1,19 @@
 <template>
-  <PickHeader :title="'Pick your coffee'" />
-  <section>
-    <div v-for="coffee in coffees" :key="coffee.title">
-      <SingleCoffee :coffee="coffee" @picked="picked" />
-    </div>
-  </section>
+  <div class="new-brew">
+    <PickHeader :title="'Pick your coffee'" />
+    <section>
+      <div v-for="coffee in coffees" :key="coffee.title">
+        <SingleCoffee :coffee="coffee" @picked="picked" />
+      </div>
+    </section>
+  </div>
 </template>
 
 <script setup>
-import PickHeader from "./PickHeader.vue";
-import SingleCoffee from "./SingleCoffee.vue";
+import PickHeader from "../../components/newBrew/PickHeader.vue";
+import SingleCoffee from "../../components/newBrew/SingleCoffee.vue";
+import { useRouter } from "vue-router";
+
 // const props = defineProps({
 //   coffees: Array,
 // });
@@ -35,9 +39,11 @@ const coffees = [
   },
 ];
 
+const router = useRouter();
+
 const emit = defineEmits(["coffee"]);
 
 const picked = (coffee) => {
-  emit("coffee", coffee);
+  router.push({ name: "Method" });
 };
 </script>

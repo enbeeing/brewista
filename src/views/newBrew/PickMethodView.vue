@@ -1,15 +1,18 @@
 <template>
-  <PickHeader :title="'Combine with method'" />
-  <section>
-    <div v-for="method in methods" :key="method.title">
-      <SingleMethod :method="method" @picked="picked" />
-    </div>
-  </section>
+  <div class="new-brew">
+    <PickHeader :title="'Combine with method'" />
+    <section>
+      <div v-for="method in methods" :key="method.title">
+        <SingleMethod :method="method" @picked="picked" />
+      </div>
+    </section>
+  </div>
 </template>
 
 <script setup>
-import PickHeader from "./PickHeader.vue";
-import SingleMethod from "./SingleMethod.vue";
+import PickHeader from "../../components/newBrew/PickHeader.vue";
+import SingleMethod from "../../components/newBrew/SingleMethod.vue";
+import { useRouter } from "vue-router";
 
 const methods = [
   {
@@ -54,10 +57,14 @@ const methods = [
   },
 ];
 
+const router = useRouter();
+
 const emit = defineEmits(["method"]);
 
 const picked = (method) => {
-  emit("method", method);
+  // emit("method", method);
+  // safe method and redirect
+  router.push({ name: "Home" });
 };
 </script>
 
