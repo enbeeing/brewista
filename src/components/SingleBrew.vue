@@ -20,7 +20,7 @@
         </svg>
       </div>
     </header>
-    <div class="brew-wrapper">
+    <div class="content-wrapper">
       <div class="brew-coffee">
         <svg class="infusion">
           <use xlink:href="#infusion" />
@@ -82,7 +82,7 @@ const props = defineProps({
 }
 
 .brew img {
-  width: 100%;
+  /* width: 100%; */
   object-fit: cover;
   max-height: 175px;
 }
@@ -94,11 +94,6 @@ const props = defineProps({
   left: 15px;
 }
 
-/* brew descriptions */
-.brew-wrapper {
-  padding: 1.5rem;
-}
-
 /* brew icon */
 .infusion {
   width: 39px;
@@ -106,6 +101,7 @@ const props = defineProps({
   margin-right: 2rem;
 }
 
+/* brew descriptions/content */
 .brew-coffee {
   display: flex;
   justify-content: flex-start;

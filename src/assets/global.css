@@ -4,6 +4,7 @@
     --brew-bg-color: #f7f7f7;
     --main-text-color: #000;
     --medium-text-color: #3D3D3D;
+    --light-medium-text-color: #707070;
     /* #707070 */
     --light-text-color: #afafaf;
 /* rename the secondary ones */
@@ -22,10 +23,26 @@ body {
     font-family: var(--main-font);
 }
 
-.home, .faves {
+img {
+    max-width: 100%;
+}
+
+.home, .faves, .new-brew {
     padding: 2.5rem 1.5rem;
 }
 
-.home >  header, .faves  > header {
+.home >  header, .faves  > header, .new-brew > header {
     margin-bottom: 4rem;
 }
+
+/* font-weight 400 */
+header > h3,
+.coffee h3,
+.coffee h4 {
+  font-weight: 400;
+}
+
+/* .content-wrapper padding */
+.content-wrapper {
+    padding: 2rem;
+  }
