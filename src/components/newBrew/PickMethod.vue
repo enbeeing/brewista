@@ -2,7 +2,7 @@
   <PickHeader :title="'Combine with method'" />
   <section>
     <div v-for="method in methods" :key="method.title">
-      <SingleMethod :method="method" />
+      <SingleMethod :method="method" @picked="picked" />
     </div>
   </section>
 </template>
@@ -53,6 +53,12 @@ const methods = [
     },
   },
 ];
+
+const emit = defineEmits(["method"]);
+
+const picked = (method) => {
+  emit("method", method);
+};
 </script>
 
 <style>

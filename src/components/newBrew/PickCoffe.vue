@@ -2,7 +2,7 @@
   <PickHeader :title="'Pick your coffee'" />
   <section>
     <div v-for="coffee in coffees" :key="coffee.title">
-      <SingleCoffee :coffee="coffee" />
+      <SingleCoffee :coffee="coffee" @picked="picked" />
     </div>
   </section>
 </template>
@@ -34,4 +34,10 @@ const coffees = [
     country: "Guatemala",
   },
 ];
+
+const emit = defineEmits(["coffee"]);
+
+const picked = (coffee) => {
+  emit("coffee", coffee);
+};
 </script>

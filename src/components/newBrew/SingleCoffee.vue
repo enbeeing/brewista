@@ -1,8 +1,8 @@
 <template>
-  <article class="coffee">
+  <article class="coffee" @click="emit('picked', coffee)">
     <header>
       <img
-        src="../assets/images/header-coffeecollective.jpg"
+        src="../../assets/images/header-coffeecollective.jpg"
         alt="coffee collective"
       />
     </header>
@@ -49,6 +49,8 @@
 const props = defineProps({
   coffee: Object,
 });
+
+const emit = defineEmits(["picked"]);
 
 // set dark theme on every other here
 </script>

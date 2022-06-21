@@ -1,5 +1,5 @@
 <template>
-  <article class="method content-wrapper">
+  <article class="method content-wrapper" @click="emit('picked', method)">
     <div>
       <svg class="method-svg">
         <use :xlink:href="method.svg" />
@@ -43,6 +43,8 @@
 const props = defineProps({
   method: Object,
 });
+
+const emit = defineEmits(["picked"]);
 </script>
 
 <style>
