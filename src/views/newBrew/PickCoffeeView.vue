@@ -41,9 +41,7 @@ const coffees = [
 
 const router = useRouter();
 
-const emit = defineEmits(["coffee"]);
-
 const picked = (coffee) => {
-  router.push({ name: "Method" });
+  router.push({ name: "Method", params: { coffee: JSON.stringify(coffee) } });
 };
 </script>

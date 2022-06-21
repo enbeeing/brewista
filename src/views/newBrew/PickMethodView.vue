@@ -14,6 +14,10 @@ import PickHeader from "../../components/newBrew/PickHeader.vue";
 import SingleMethod from "../../components/newBrew/SingleMethod.vue";
 import { useRouter } from "vue-router";
 
+const props = defineProps({
+  coffee: String,
+});
+
 const methods = [
   {
     title: "French Press",
@@ -62,9 +66,10 @@ const router = useRouter();
 const emit = defineEmits(["method"]);
 
 const picked = (method) => {
-  // emit("method", method);
-  // safe method and redirect
-  router.push({ name: "Home" });
+  router.push({
+    name: "Guide",
+    params: { coffee: props.coffee, method: JSON.stringify(method) },
+  });
 };
 </script>
 
