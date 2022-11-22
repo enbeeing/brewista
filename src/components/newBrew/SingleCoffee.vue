@@ -1,7 +1,14 @@
 <template>
-  <article class="coffee" @click="emit('picked', coffee)">
+  <!-- use binding for alternating dark/light colors -->
+  <article :class="{ dark: darkClass, coffee }" @click="emit('picked', coffee)">
     <header>
       <img
+        v-if="darkClass"
+        src="../../assets/images/header-coffeecollective-dark.jpg"
+        alt="coffee collective"
+      />
+      <img
+        v-else
         src="../../assets/images/header-coffeecollective.jpg"
         alt="coffee collective"
       />
@@ -52,7 +59,7 @@ const props = defineProps({
 
 const emit = defineEmits(["picked"]);
 
-// set dark theme on every other here
+const darkClass = props.coffee.id % 2 != 0;
 </script>
 
 <style>
@@ -82,10 +89,25 @@ const emit = defineEmits(["picked"]);
   margin: 0.2rem 0;
 }
 
+.coffee.dark {
+  background: var(--dark-secondary-color);
+}
+
+.dark p,
+.dark h4 {
+  color: var(--light-text-color);
+}
+
+.dark .details p,
+.dark span,
+.dark h3 {
+  color: var(--dark-theme-text-color);
+}
+
 .details h4,
 .coffee p,
 .coffee span {
-  font-size: 0.85rem;
-  line-height: 1.2rem;
+  font-size: 0.8rem;
+  line-height: 1.1rem;
 }
 </style>

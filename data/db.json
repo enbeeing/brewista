@@ -5,7 +5,7 @@
       "title": "KIENI ESPRESSO",
       "description": "En frugtbombe af en espresso med aroma af brombær, solbær, stikkelbær og fyldig, olieret afslutning.",
       "process": "Washed",
-      "roast Profile": "Medium",
+      "roastProfile": "Medium",
       "varieties": [
         "Castilo",
         "Caturra"
@@ -17,7 +17,7 @@
       "title": "KIENI",
       "description": "Saftig syrlighed med intens sødme. Fyldig og læskende med kompleks aroma af solbær, stikkelbær og brombær",
       "process": "Washed",
-      "roast Profile": "Medium",
+      "roastProfile": "Medium",
       "varieties": [
         "Castilo",
         "Caturra"
@@ -79,7 +79,7 @@
         "title": "KIENI ESPRESSO",
         "description": "En frugtbombe af en espresso med aroma af brombær, solbær, stikkelbær og fyldig, olieret afslutning.",
         "process": "Washed",
-        "roast Profile": "Medium",
+        "roastProfile": "Medium",
         "varieties": [
           "Castilo",
           "Caturra"
@@ -109,7 +109,7 @@
         "title": "KIENI",
         "description": "Saftig syrlighed med intens sødme. Fyldig og læskende med kompleks aroma af solbær, stikkelbær og brombær",
         "process": "Washed",
-        "roast Profile": "Medium",
+        "roastProfile": "Medium",
         "varieties": [
           "Castilo",
           "Caturra"

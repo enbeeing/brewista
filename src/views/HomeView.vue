@@ -34,8 +34,6 @@
 <script setup>
 import Navbar from "../components/Navbar.vue";
 import BrewList from "../components/BrewList.vue";
-import getCoffees from "../composables/getCoffees";
-import getMethods from "../composables/getMethods";
 import getBrews from "../composables/getBrews";
 
 // get all or get one cat at a time?
