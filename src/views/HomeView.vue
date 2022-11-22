@@ -51,64 +51,18 @@
 <script setup>
 import Navbar from "../components/Navbar.vue";
 import BrewList from "../components/BrewList.vue";
-// import { ref } from "vue";
+import getCoffees from "../composables/getCoffees";
+import getMethods from "../composables/getMethods";
+import getBrews from "../composables/getBrews";
 
-const brews = [
-  {
-    coffee: {
-      title: "KIENI ESPRESSO",
-      description:
-        "En frugtbombe af en espresso med aroma af brombær, solbær, stikkelbær og fyldig, olieret afslutning.",
-      process: "Washed",
-      roastProfile: "Medium",
-      varieties: ["Castilo", "Caturra"],
-      country: "Guatemala",
-    },
-    method: {
-      title: "Cold Infusion",
-      svg: "#infusion",
-      method: {
-        gram: "40g",
-        water: "200ml",
-        grind: "Coarse",
-        time: "2 timer",
-      },
-    },
-    img: {
-      name: "ColdBrew.jpg",
-      alt: "cold brew",
-    },
-    isFave: true,
-    id: 1,
-  },
-  {
-    coffee: {
-      title: "KIENI",
-      description:
-        "En frugtbombe af en espresso med aroma af brombær, solbær, stikkelbær og fyldig, olieret afslutning.",
-      process: "Washed",
-      roastProfile: "Medium",
-      varieties: ["Castilo", "Caturra"],
-      country: "Guatemala",
-    },
-    method: {
-      title: "Cold Infusion",
-      svg: "#infusion",
-      method: {
-        gram: "40g",
-        water: "200ml",
-        grind: "Coarse",
-        time: "2 timer",
-      },
-    },
-    img: {
-      name: "ColdBrew.jpg",
-      alt: "cold brew",
-    },
-    isFave: false,
-    id: 2,
-  },
-];
+// get all or get one cat at a time?
+const { coffees, error: errorCoffee, load: loadCoffees } = getCoffees();
+const { methods, error: errorMethod, load: loadMethods } = getMethods();
+const { brews, error: errorBrews, load: loadBrews } = getBrews();
+
+loadCoffees();
+loadMethods();
+loadBrews();
 </script>
 
 <style>
@@ -121,7 +75,7 @@ const brews = [
 
 h1 {
   font-weight: lighter;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 
 .hightlight-text {

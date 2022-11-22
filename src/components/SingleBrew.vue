@@ -1,8 +1,10 @@
 <template>
   <article class="brew">
     <header>
-      <img src="../assets/images/ColdBrew.jpg" :alt="brew.img.alt" />
-
+      <img
+        :src="require(`../assets/images/${brew.img.src}`)"
+        :alt="brew.img.alt"
+      />
       <div v-if="brew.isFave" class="fave">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -23,7 +25,8 @@
     <div class="content-wrapper">
       <div class="brew-coffee">
         <svg class="brew-method-icon">
-          <use :xlink:href="brew.method.svg" />
+          <!-- find a way to make this work with the binding -->
+          <use href="#french"></use>
         </svg>
         <div class="brew-description">
           <h3>
@@ -32,37 +35,15 @@
           <p>{{ brew.coffee.title }} from Coffee Colective</p>
         </div>
       </div>
-      <div class="brew-method">
-        <p>
-          <svg class="method-icon">
-            <use xlink:href="#bean" />
-          </svg>
-          {{ brew.method.method.gram }}
-        </p>
-        <p>
-          <svg class="method-icon">
-            <use xlink:href="#water" />
-          </svg>
-          {{ brew.method.method.water }}
-        </p>
-        <p>
-          <svg class="method-icon">
-            <use xlink:href="#grind" />
-          </svg>
-          {{ brew.method.method.grind }}
-        </p>
-        <p>
-          <svg class="method-icon">
-            <use xlink:href="#time" />
-          </svg>
-          {{ brew.method.method.time }}
-        </p>
-      </div>
+
+      <MethodSymbolRow :method="brew.method.method" />
     </div>
   </article>
 </template>
 
 <script setup>
+import MethodSymbolRow from "./MethodSymbolRow.vue";
+
 const props = defineProps({
   brew: Object,
 });
@@ -82,9 +63,8 @@ const props = defineProps({
 }
 
 .brew img {
-  /* width: 100%; */
+  max-height: 150px;
   object-fit: cover;
-  max-height: 175px;
 }
 
 /* fave */
@@ -95,23 +75,25 @@ const props = defineProps({
 }
 
 /* brew descriptions/content */
-.brew-coffee,
-.method {
-  display: flex;
-  justify-content: flex-start;
+.brew-coffee {
+  display: grid;
+  grid-template-columns: 60px 1fr;
   align-items: center;
+  margin-bottom: 1rem;
 }
 
+/* .brew-description, */
 .brew-description > * {
-  margin: 0.25rem 0;
-}
-
-.brew-description > p {
-  color: var(--medium-text-color);
-  font-size: 0.9rem;
+  margin: 5px 0;
 }
 
 .brew h3 {
   text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.brew-description > p {
+  color: var(--medium-text-color);
+  font-size: 0.7rem;
 }
 </style>
