@@ -12,6 +12,8 @@
     --light-secondary-color: #cdcbbf;
     --accent-color: #fff782;
     --shadow-color: #9E9E9E57;
+
+    --like-color: #BC5A40;
 }
 
 * {
@@ -57,7 +59,7 @@ header > h3,
 
   /* curser */
 
-  .coffee, button {
+  .coffee, button, .fave {
     cursor: pointer;
   }
 

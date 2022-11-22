@@ -25,10 +25,7 @@
     </header>
     <main>
       <p>Previous Brews</p>
-      <div class="error" v-if="errorBrews">
-        {{ errorBrews }}
-      </div>
-      <BrewList v-else :brews="brews" />
+      <BrewList :brews="brews" />
     </main>
   </div>
   <Navbar />
@@ -42,12 +39,8 @@ import getMethods from "../composables/getMethods";
 import getBrews from "../composables/getBrews";
 
 // get all or get one cat at a time?
-// const { coffees, error: errorCoffee, load: loadCoffees } = getCoffees();
-// const { methods, error: errorMethod, load: loadMethods } = getMethods();
-const { brews, error: errorBrews, load: loadBrews } = getBrews();
+const { brews, error, load: loadBrews } = getBrews();
 
-// loadCoffees();
-// loadMethods();
 loadBrews();
 </script>
 
