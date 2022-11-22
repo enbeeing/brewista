@@ -21,28 +21,14 @@
             />
           </svg>
         </router-link>
-        <!-- <button>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path
-              class="a"
-              d="M16.008,6V16.008m0,0V26.015m0-10.008H26.015m-10.008,0H6"
-              transform="translate(-4 -3.5)"
-            />
-          </svg>
-        </button> -->
       </div>
     </header>
     <main>
       <p>Previous Brews</p>
-      <BrewList :brews="brews" />
+      <div class="error" v-if="errorBrews">
+        {{ errorBrews }}
+      </div>
+      <BrewList v-else :brews="brews" />
     </main>
   </div>
   <Navbar />
@@ -56,12 +42,12 @@ import getMethods from "../composables/getMethods";
 import getBrews from "../composables/getBrews";
 
 // get all or get one cat at a time?
-const { coffees, error: errorCoffee, load: loadCoffees } = getCoffees();
-const { methods, error: errorMethod, load: loadMethods } = getMethods();
+// const { coffees, error: errorCoffee, load: loadCoffees } = getCoffees();
+// const { methods, error: errorMethod, load: loadMethods } = getMethods();
 const { brews, error: errorBrews, load: loadBrews } = getBrews();
 
-loadCoffees();
-loadMethods();
+// loadCoffees();
+// loadMethods();
 loadBrews();
 </script>
 
