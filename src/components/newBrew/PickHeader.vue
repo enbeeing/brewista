@@ -1,8 +1,8 @@
 <template>
-  <header>
+  <header class="pick-header">
     <button @click="router.go(-1)">
       <svg class="back">
-        <use xlink:href="#arrowBack" />
+        <use class="back-use" xlink:href="#arrowBack" />
       </svg>
     </button>
     <h3>
@@ -22,23 +22,28 @@ const router = useRouter();
 </script>
 
 <style>
-.new-brew > header {
-  position: relative;
+.pick-header {
   text-align: center;
+  display: grid;
+  grid-auto-columns: 30px 1fr 30px;
+  grid-template-areas: "button title .";
+  align-items: center;
+  gap: 0.8rem;
 }
 
-.new-brew button {
+.pick-header button {
   border: none;
   background: none;
-  position: absolute;
-  left: 0;
-  width: 50px;
+  grid-area: button;
 }
 
-.new-brew .back {
+.pick-header .back {
   max-width: 100%;
   color: var(--main-text-color);
-  /* center diff later */
-  transform: translateY(-4px);
+  transform: translateY(2px);
+}
+
+.pick-header h3 {
+  grid-area: title;
 }
 </style>
