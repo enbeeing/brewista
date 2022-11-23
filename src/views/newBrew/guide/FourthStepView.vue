@@ -1,7 +1,10 @@
 <template>
   <div class="new-brew guide">
     <header>
-      <img src="../../../assets/images/guide/4.png" alt="" />
+      <img
+        src="../../../assets/images/guide/4.png"
+        alt="Filtering or pouring coffee"
+      />
     </header>
     <div class="content">
       <h2>4</h2>
