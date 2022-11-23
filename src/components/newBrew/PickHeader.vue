@@ -25,10 +25,10 @@ const router = useRouter();
 .pick-header {
   text-align: center;
   display: grid;
-  grid-auto-columns: 30px 1fr 30px;
+  grid-auto-columns: 25px 1fr 25px;
   grid-template-areas: "button title .";
   align-items: center;
-  gap: 0.8rem;
+  gap: 1rem;
 }
 
 .pick-header button {
