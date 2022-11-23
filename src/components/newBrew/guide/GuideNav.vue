@@ -13,6 +13,8 @@
         height="8"
         viewBox="0 0 8 8"
         :class="{ current: current == i }"
+        :id="i"
+        @click="goTo"
       >
         <g class="a">
           <circle class="b" cx="4" cy="4" r="4" />
@@ -36,7 +38,23 @@ const current = window.location.toString().split("/")[4];
 const guideSteps = 4;
 
 const prevStep = () => {
-  router.go(-1);
+  if (current > 1) {
+    router.push({
+      name: `Guide${parseInt(current) - 1}`,
+    });
+  } else {
+    router.push({
+      name: "Method",
+    });
+  }
+};
+
+const goTo = (e) => {
+  if (e.target.id) {
+    router.push({
+      name: `Guide${e.target.id}`,
+    });
+  }
 };
 
 const nextStep = () => {
