@@ -34,8 +34,7 @@
     <div class="content-wrapper">
       <div class="brew-coffee">
         <svg class="brew-method-icon">
-          <!-- find a way to make this work with the binding -->
-          <use href="#french"></use>
+          <use :xlink:href="brew.method.svg" />
         </svg>
         <div class="brew-description">
           <h3>

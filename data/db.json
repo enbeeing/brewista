@@ -94,7 +94,8 @@
           "water": "200ml",
           "grind": "Coarse",
           "time": "2 timer"
-        }
+        },
+        "svg": "#infusion"
       },
       "img": {
         "alt": "",
@@ -124,7 +125,8 @@
           "water": "500ml",
           "grind": "Coarse",
           "time": "4min"
-        }
+        },
+        "svg": "#french"
       },
       "img": {
         "alt": "",
