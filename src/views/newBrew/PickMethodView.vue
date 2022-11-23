@@ -65,10 +65,13 @@ const router = useRouter();
 
 const emit = defineEmits(["method"]);
 
+// add to data instead of sending further, it's not used anyway
+// but what to do about picture? default how can someone add it, and when?
+// TODO: evt. make another view after step guide, where image can be added?
 const picked = (method) => {
   router.push({
-    name: "Guide",
-    params: { coffee: props.coffee, method: JSON.stringify(method) },
+    name: "Guide1",
+    // params: { coffee: props.coffee, method: JSON.stringify(method) },
   });
 };
 </script>

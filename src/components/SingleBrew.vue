@@ -40,7 +40,7 @@
           <h3>
             {{ brew.method.title }}
           </h3>
-          <p>{{ brew.coffee.title }} from Coffee Colective</p>
+          <p>{{ brew.coffee.title }} from Coffee Collective</p>
         </div>
       </div>
 
@@ -59,7 +59,6 @@ const props = defineProps({
 
 const toggleFave = () => {
   props.brew.isFave = !props.brew.isFave;
-  console.log(props.brew.isFave);
   updateBrew(props.brew);
 };
 </script>

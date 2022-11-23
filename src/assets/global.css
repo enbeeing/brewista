@@ -56,11 +56,47 @@ header > h3,
   height: 60px;
 }
 
-  /* curser */
+/* guide step views*/
+.guide header {
+  padding-bottom: 2.2rem;
+  margin: .5rem 0;
+}
 
-  .coffee, button, .fave {
-    cursor: pointer;
-  }
+.guide .content {
+  display: grid;
+  grid-template: 
+  "h2 h3" auto
+  ". p" auto / 30px 1fr;
+  gap: 1rem;
+  margin: 0 .5rem;
+}
+
+.guide h2 {
+  grid-area: h2;
+  font-size: 2.2rem;
+}
+
+.guide h3 {
+  grid-area: h3;
+  font-size: 1rem;
+  transform: translateY(5px);
+} 
+
+.guide pre {
+  grid-area: p;
+  white-space: pre-wrap;       
+  white-space: -moz-pre-wrap;  
+  white-space: -pre-wrap;      
+  white-space: -o-pre-wrap;    
+  word-wrap: break-word;
+  font-family: var(--main-font);
+  font-size: .9rem;
+}
+
+/* curser */
+.coffee, button, .fave, .arrow {
+  cursor: pointer;
+}
 
 
   /* sr-only */

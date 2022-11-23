@@ -2,7 +2,7 @@
   <header class="pick-header">
     <button @click="router.go(-1)">
       <svg class="back">
-        <use class="back-use" xlink:href="#arrowBack" />
+        <use xlink:href="#arrowBack" />
       </svg>
     </button>
     <h3>
