@@ -94,7 +94,7 @@ header > h3,
 }
 
 /* curser */
-.coffee, button, .fave, .arrow, .dots svg {
+.coffee, .method, button, .fave, .arrow, .dots svg {
   cursor: pointer;
 }
 
