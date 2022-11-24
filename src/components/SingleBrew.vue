@@ -1,21 +1,32 @@
 <template>
   <article class="brew">
     <header>
-      <img src="../assets/images/ColdBrew.jpg" :alt="brew.img.alt" />
-
-      <div v-if="brew.isFave" class="fave">
+      <img
+        :src="require(`../assets/images/${brew.img.src}`)"
+        :alt="brew.img.alt"
+      />
+      <div class="fave" @click="toggleFave">
         <svg
+          v-if="brew.isFave"
+          class="isFave"
           xmlns="http://www.w3.org/2000/svg"
-          width="34"
-          height="34"
-          viewBox="0 0 34 34"
+          viewBox="0 0 24 24"
+          stroke-width="2"
         >
-          <circle cx="17" cy="17" r="17" />
           <path
             class="a"
-            fill="white"
-            d="M3.285,5.285a4.386,4.386,0,0,1,6.2,0l1.285,1.284,1.285-1.284a4.385,4.385,0,0,1,6.2,0c1.713,1.713,1.193,4.554,0,6.2-4.375,6.046-6.557,7.487-7.487,7.487s-3.464-1.216-7.487-7.488c-1.239-1.932-1.712-4.489,0-6.2Z"
-            transform="translate(6.236 6.172)"
+            d="M3.314,5.318a4.5,4.5,0,0,1,6.363,0L11,6.636l1.319-1.317a4.5,4.5,0,0,1,6.363,0c1.757,1.757,1.224,4.673,0,6.364-4.489,6.2-6.727,7.682-7.682,7.682s-3.555-1.247-7.682-7.683c-1.271-1.982-1.757-4.606,0-6.363Z"
+          />
+        </svg>
+        <svg
+          v-else
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+        >
+          <path
+            class="a"
+            d="M3.314,5.318a4.5,4.5,0,0,1,6.363,0L11,6.636l1.319-1.317a4.5,4.5,0,0,1,6.363,0c1.757,1.757,1.224,4.673,0,6.364-4.489,6.2-6.727,7.682-7.682,7.682s-3.555-1.247-7.682-7.683c-1.271-1.982-1.757-4.606,0-6.363Z"
           />
         </svg>
       </div>
@@ -29,43 +40,27 @@
           <h3>
             {{ brew.method.title }}
           </h3>
-          <p>{{ brew.coffee.title }} from Coffee Colective</p>
+          <p>{{ brew.coffee.title }} from Coffee Collective</p>
         </div>
       </div>
-      <div class="brew-method">
-        <p>
-          <svg class="method-icon">
-            <use xlink:href="#bean" />
-          </svg>
-          {{ brew.method.method.gram }}
-        </p>
-        <p>
-          <svg class="method-icon">
-            <use xlink:href="#water" />
-          </svg>
-          {{ brew.method.method.water }}
-        </p>
-        <p>
-          <svg class="method-icon">
-            <use xlink:href="#grind" />
-          </svg>
-          {{ brew.method.method.grind }}
-        </p>
-        <p>
-          <svg class="method-icon">
-            <use xlink:href="#time" />
-          </svg>
-          {{ brew.method.method.time }}
-        </p>
-      </div>
+
+      <MethodSymbolRow :method="brew.method.method" />
     </div>
   </article>
 </template>
 
 <script setup>
+import MethodSymbolRow from "./MethodSymbolRow.vue";
+import updateBrew from "../composables/updateBrew";
+
 const props = defineProps({
   brew: Object,
 });
+
+const toggleFave = () => {
+  props.brew.isFave = !props.brew.isFave;
+  updateBrew(props.brew);
+};
 </script>
 
 <style>
@@ -82,9 +77,8 @@ const props = defineProps({
 }
 
 .brew img {
-  /* width: 100%; */
+  max-height: 150px;
   object-fit: cover;
-  max-height: 175px;
 }
 
 /* fave */
@@ -92,26 +86,39 @@ const props = defineProps({
   position: absolute;
   top: 15px;
   left: 15px;
+  height: 30px;
+  width: 30px;
+  fill: var(--brew-bg-color);
+}
+
+.fave path {
+  fill: var(--light-text-color);
+}
+
+.fave .isFave path {
+  fill: var(--like-color);
 }
 
 /* brew descriptions/content */
-.brew-coffee,
-.method {
-  display: flex;
-  justify-content: flex-start;
+.brew-coffee {
+  display: grid;
+  grid-template-columns: 60px 1fr;
   align-items: center;
+  margin-bottom: 1rem;
 }
 
+/* .brew-description, */
 .brew-description > * {
-  margin: 0.25rem 0;
-}
-
-.brew-description > p {
-  color: var(--medium-text-color);
-  font-size: 0.9rem;
+  margin: 5px 0;
 }
 
 .brew h3 {
   text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.brew-description > p {
+  color: var(--medium-text-color);
+  font-size: 0.7rem;
 }
 </style>

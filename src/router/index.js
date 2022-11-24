@@ -3,7 +3,11 @@ import HomeView from '../views/HomeView.vue'
 import FaveView from '../views/FavesView.vue'
 import PickCoffeeView from '../views/newBrew/PickCoffeeView.vue'
 import PickMethodView from '../views/newBrew/PickMethodView.vue'
-import GuideView from '../views/newBrew/GuideView.vue'
+import FirstStep from '../views/newBrew/guide/FirstStepView.vue'
+import SecondStep from '../views/newBrew/guide/SecondStepView.vue'
+import ThirdStep from '../views/newBrew/guide/ThirdStepView.vue'
+import FourthStep from '../views/newBrew/guide/FourthStepView.vue'
+import AddBrew from '../views/newBrew/AddBrewView.vue'
 
 const routes = [
   {
@@ -28,11 +32,35 @@ const routes = [
     props: true
   },
   {
-    path: '/guide',
-    name: 'Guide',
-    component: GuideView,
+    path: '/guide/1',
+    name: 'Guide1',
+    component: FirstStep,
     props: true
-  }
+  },
+  {
+    path: '/guide/2',
+    name: 'Guide2',
+    component: SecondStep,
+    props: true
+  },
+  {
+    path: '/guide/3',
+    name: 'Guide3',
+    component: ThirdStep,
+    props: true
+  },
+  {
+    path: '/guide/4',
+    name: 'Guide4',
+    component: FourthStep,
+    props: true
+  },
+  {
+    path: '/finish-brew',
+    name: 'AddBrew',
+    component: AddBrew,
+    props: true
+  },
 ]
 
 const router = createRouter({

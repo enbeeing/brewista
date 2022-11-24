@@ -1,6 +1,6 @@
 <template>
-  <header>
-    <button @click="router.go(-1)">
+  <header class="pick-header">
+    <button @click="goBack">
       <svg class="back">
         <use xlink:href="#arrowBack" />
       </svg>
@@ -19,26 +19,45 @@ const props = defineProps({
 });
 
 const router = useRouter();
+
+const current = window.location.toString().split("/")[3];
+
+const goBack = () => {
+  if (current == "method") {
+    router.push({
+      name: `Coffee`,
+    });
+  } else {
+    router.push({
+      name: `Home`,
+    });
+  }
+};
 </script>
 
 <style>
-.new-brew > header {
-  position: relative;
+.pick-header {
   text-align: center;
+  display: grid;
+  grid-auto-columns: 25px 1fr 25px;
+  grid-template-areas: "button title .";
+  align-items: center;
+  gap: 1rem;
 }
 
-.new-brew button {
+.pick-header button {
   border: none;
   background: none;
-  position: absolute;
-  left: 0;
-  width: 50px;
+  grid-area: button;
 }
 
-.new-brew .back {
+.pick-header .back {
   max-width: 100%;
   color: var(--main-text-color);
-  /* center diff later */
-  transform: translateY(-4px);
+  transform: translateY(2px);
+}
+
+.pick-header h3 {
+  grid-area: title;
 }
 </style>

@@ -12,6 +12,8 @@
     --light-secondary-color: #cdcbbf;
     --accent-color: #fff782;
     --shadow-color: #9E9E9E57;
+    --dark-theme-text-color: #5D78BD;
+    --like-color: #BC5A40;
 }
 
 * {
@@ -44,7 +46,7 @@ header > h3,
 
 /* .content-wrapper padding */
 .content-wrapper {
-    padding: 2rem;
+    padding: 1.8rem;
 }
 
   /* brew icon */
@@ -52,39 +54,49 @@ header > h3,
 .method-svg {
   width: 35px;
   height: 60px;
-  margin-right: 2rem;
 }
 
+/* guide step views*/
+.guide header {
+  padding-bottom: 2.2rem;
+  margin: .5rem 0;
+}
 
-/* for SingleBrew and SingleMethod */
-/* brew methods icons and info  */
-.brew-method {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .brew-method > p {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 1.4rem 0.2rem 0.2rem 0.2rem;
-    font-size: 0.7rem;
-    color: var(--light-text-color);
-  }
-  
-  .method-icon {
-    height: 0.75rem;
-    width: 1rem;
-    margin-right: 0.2rem;
-  }
+.guide .content {
+  display: grid;
+  grid-template: 
+  "h2 h3" auto
+  ". p" auto / 30px 1fr;
+  gap: 1rem;
+  margin: 0 .5rem;
+}
 
+.guide h2 {
+  grid-area: h2;
+  font-size: 2.2rem;
+}
 
-  /* curser */
+.guide h3 {
+  grid-area: h3;
+  font-size: 1rem;
+  transform: translateY(5px);
+} 
 
-  .coffee, button {
-    cursor: pointer;
-  }
+.guide pre {
+  grid-area: p;
+  white-space: pre-wrap;       
+  white-space: -moz-pre-wrap;  
+  white-space: -pre-wrap;      
+  white-space: -o-pre-wrap;    
+  word-wrap: break-word;
+  font-family: var(--main-font);
+  font-size: .9rem;
+}
+
+/* curser */
+.coffee, .method, button, .fave, .arrow, .dots svg {
+  cursor: pointer;
+}
 
 
   /* sr-only */

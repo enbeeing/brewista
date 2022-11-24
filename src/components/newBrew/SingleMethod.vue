@@ -9,37 +9,14 @@
       <h3>
         {{ method.title }}
       </h3>
-      <div class="brew-method">
-        <p>
-          <svg class="method-icon">
-            <use xlink:href="#bean" />
-          </svg>
-          {{ method.method.gram }}
-        </p>
-        <p>
-          <svg class="method-icon">
-            <use xlink:href="#water" />
-          </svg>
-          {{ method.method.water }}
-        </p>
-        <p>
-          <svg class="method-icon">
-            <use xlink:href="#grind" />
-          </svg>
-          {{ method.method.grind }}
-        </p>
-        <p>
-          <svg class="method-icon">
-            <use xlink:href="#time" />
-          </svg>
-          {{ method.method.time }}
-        </p>
-      </div>
+      <MethodSymbolRow class="brew-method" :method="method.method" />
     </div>
   </article>
 </template>
 
 <script setup>
+import MethodSymbolRow from "../MethodSymbolRow.vue";
+
 const props = defineProps({
   method: Object,
 });
@@ -52,19 +29,14 @@ const emit = defineEmits(["picked"]);
   background: var(--brew-bg-color);
   margin: 2rem 0;
   border-radius: 25px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1.5rem;
 }
 
-.method .method-svg {
-  margin-right: 1rem;
-}
-
-.method-content {
-  width: 100%;
-}
-
-.method .brew-method > p,
-.method .brew-method > p:first-of-type {
-  margin-top: 0.5rem;
-  margin-left: 0;
+.method-content h3 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
 }
 </style>

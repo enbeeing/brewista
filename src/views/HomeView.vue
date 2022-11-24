@@ -21,28 +21,12 @@
             />
           </svg>
         </router-link>
-        <!-- <button>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path
-              class="a"
-              d="M16.008,6V16.008m0,0V26.015m0-10.008H26.015m-10.008,0H6"
-              transform="translate(-4 -3.5)"
-            />
-          </svg>
-        </button> -->
       </div>
     </header>
     <main>
       <p>Previous Brews</p>
-      <BrewList :brews="brews" />
+      <BrewList v-if="brews.length > 0" :brews="brews" />
+      <Spinner v-else />
     </main>
   </div>
   <Navbar />
@@ -50,65 +34,14 @@
 
 <script setup>
 import Navbar from "../components/Navbar.vue";
+import Spinner from "../components/Spinner.vue";
 import BrewList from "../components/BrewList.vue";
-// import { ref } from "vue";
+import getBrews from "../composables/getBrews";
 
-const brews = [
-  {
-    coffee: {
-      title: "KIENI ESPRESSO",
-      description:
-        "En frugtbombe af en espresso med aroma af brombær, solbær, stikkelbær og fyldig, olieret afslutning.",
-      process: "Washed",
-      roastProfile: "Medium",
-      varieties: ["Castilo", "Caturra"],
-      country: "Guatemala",
-    },
-    method: {
-      title: "Cold Infusion",
-      svg: "#infusion",
-      method: {
-        gram: "40g",
-        water: "200ml",
-        grind: "Coarse",
-        time: "2 timer",
-      },
-    },
-    img: {
-      name: "ColdBrew.jpg",
-      alt: "cold brew",
-    },
-    isFave: true,
-    id: 1,
-  },
-  {
-    coffee: {
-      title: "KIENI",
-      description:
-        "En frugtbombe af en espresso med aroma af brombær, solbær, stikkelbær og fyldig, olieret afslutning.",
-      process: "Washed",
-      roastProfile: "Medium",
-      varieties: ["Castilo", "Caturra"],
-      country: "Guatemala",
-    },
-    method: {
-      title: "Cold Infusion",
-      svg: "#infusion",
-      method: {
-        gram: "40g",
-        water: "200ml",
-        grind: "Coarse",
-        time: "2 timer",
-      },
-    },
-    img: {
-      name: "ColdBrew.jpg",
-      alt: "cold brew",
-    },
-    isFave: false,
-    id: 2,
-  },
-];
+// get all or get one cat at a time?
+const { brews, error, load: loadBrews } = getBrews();
+
+loadBrews();
 </script>
 
 <style>
@@ -121,7 +54,7 @@ const brews = [
 
 h1 {
   font-weight: lighter;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 
 .hightlight-text {
