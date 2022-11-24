@@ -16,10 +16,15 @@ If it gets to cold you can heat it back up in a microwave.
         </pre
       >
     </div>
-    <GuideNav />
+    <GuideNav :coffee="coffee" :method="method" />
   </div>
 </template>
 
 <script setup>
 import GuideNav from "../../../components/newBrew/guide/GuideNav.vue";
+
+const props = defineProps({
+  coffee: String,
+  method: String,
+});
 </script>

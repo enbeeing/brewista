@@ -33,6 +33,11 @@
 <script setup>
 import { useRouter } from "vue-router";
 
+const props = defineProps({
+  coffee: String,
+  method: String,
+});
+
 const router = useRouter();
 const current = window.location.toString().split("/")[4];
 const guideSteps = 4;
@@ -41,10 +46,12 @@ const prevStep = () => {
   if (current > 1) {
     router.push({
       name: `Guide${parseInt(current) - 1}`,
+      params: { coffee: props.coffee, method: props.method },
     });
   } else {
     router.push({
       name: "Method",
+      params: { coffee: props.coffee },
     });
   }
 };
@@ -53,6 +60,7 @@ const goTo = (e) => {
   if (e.target.id) {
     router.push({
       name: `Guide${e.target.id}`,
+      params: { coffee: props.coffee, method: props.method },
     });
   }
 };
@@ -61,9 +69,13 @@ const nextStep = () => {
   if (current < guideSteps) {
     router.push({
       name: `Guide${parseInt(current) + 1}`,
+      params: { coffee: props.coffee, method: props.method },
     });
   } else {
-    router.push({ name: `Home` });
+    router.push({
+      name: `AddBrew`,
+      params: { coffee: props.coffee, method: props.method },
+    });
   }
 };
 </script>

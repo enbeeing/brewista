@@ -1,6 +1,6 @@
 <template>
   <header class="pick-header">
-    <button @click="router.go(-1)">
+    <button @click="goBack">
       <svg class="back">
         <use xlink:href="#arrowBack" />
       </svg>
@@ -19,6 +19,20 @@ const props = defineProps({
 });
 
 const router = useRouter();
+
+const current = window.location.toString().split("/")[3];
+
+const goBack = () => {
+  if (current == "method") {
+    router.push({
+      name: `Coffee`,
+    });
+  } else {
+    router.push({
+      name: `Home`,
+    });
+  }
+};
 </script>
 
 <style>

@@ -15,10 +15,15 @@ Remember that the burrs on a grinder changes over time. You will need to test ou
 Normally if the coffee tastes bitter amd dry, grind coarser, if weak and watery, grind finer. There is usually no need to adjust the coffee amount, simply adjust tand test different grind settings.
       </pre>
     </div>
-    <GuideNav />
+    <GuideNav :coffee="coffee" :method="method" />
   </div>
 </template>
 
 <script setup>
 import GuideNav from "../../../components/newBrew/guide/GuideNav.vue";
+
+const props = defineProps({
+  coffee: String,
+  method: String,
+});
 </script>

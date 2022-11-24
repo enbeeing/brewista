@@ -14,7 +14,7 @@ We recommend 60g/l
 The more you brew the coarser you need to grind the coffee
       </pre>
     </div>
-    <GuideNav />
+    <GuideNav :coffee="coffee" :method="method" />
   </div>
 </template>
 
@@ -22,10 +22,7 @@ The more you brew the coarser you need to grind the coffee
 import GuideNav from "../../../components/newBrew/guide/GuideNav.vue";
 
 const props = defineProps({
-  // coffee: String,
-  // method: String,
+  coffee: String,
+  method: String,
 });
-
-// const coffee = JSON.parse(props.coffee);
-// const method = JSON.parse(props.method);
 </script>

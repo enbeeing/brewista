@@ -7,6 +7,7 @@ import FirstStep from '../views/newBrew/guide/FirstStepView.vue'
 import SecondStep from '../views/newBrew/guide/SecondStepView.vue'
 import ThirdStep from '../views/newBrew/guide/ThirdStepView.vue'
 import FourthStep from '../views/newBrew/guide/FourthStepView.vue'
+import AddBrew from '../views/newBrew/AddBrewView.vue'
 
 const routes = [
   {
@@ -53,7 +54,13 @@ const routes = [
     name: 'Guide4',
     component: FourthStep,
     props: true
-  }
+  },
+  {
+    path: '/finish-brew',
+    name: 'AddBrew',
+    component: AddBrew,
+    props: true
+  },
 ]
 
 const router = createRouter({
