@@ -25,7 +25,8 @@
     </header>
     <main>
       <p>Previous Brews</p>
-      <BrewList :brews="brews" />
+      <BrewList v-if="brews.length > 0" :brews="brews" />
+      <Spinner v-else />
     </main>
   </div>
   <Navbar />
@@ -33,6 +34,7 @@
 
 <script setup>
 import Navbar from "../components/Navbar.vue";
+import Spinner from "../components/Spinner.vue";
 import BrewList from "../components/BrewList.vue";
 import getBrews from "../composables/getBrews";
 
