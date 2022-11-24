@@ -3,19 +3,17 @@
     <header>
       <h1>Favorites</h1>
     </header>
-    <div class="error" v-if="errorBrews">
-      {{ errorBrews }}
-    </div>
-    <BrewList v-else :brews="faveBrews" />
+    <BrewList v-if="faveBrews.length > 0" :brews="faveBrews" />
+    <Spinner v-else />
   </div>
   <Navbar />
 </template>
 
 <script setup>
 import Navbar from "../components/Navbar.vue";
+import Spinner from "../components/Spinner.vue";
 import BrewList from "../components/BrewList.vue";
 import getBrews from "../composables/getBrews";
-import { onMounted, ref } from "vue";
 
 const {
   brews: faveBrews,
