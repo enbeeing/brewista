@@ -14,6 +14,7 @@
     --shadow-color: #9E9E9E57;
     --dark-theme-text-color: #5D78BD;
     --like-color: #BC5A40;
+    --error-color: #ce4121;
 }
 
 * {
@@ -46,7 +47,7 @@ header > h3,
 
 /* .content-wrapper padding */
 .content-wrapper {
-    padding: 1.8rem;
+  padding: 1.8rem;
 }
 
   /* brew icon */
@@ -94,7 +95,13 @@ header > h3,
 }
 
 /* curser */
-.coffee, .method, button, .fave, .arrow, .dots svg {
+.coffee, 
+.method, 
+button, 
+.fave, 
+.arrow, 
+.dots svg, 
+input[type=file] {
   cursor: pointer;
 }
 
