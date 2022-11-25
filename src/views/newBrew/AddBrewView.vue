@@ -19,6 +19,7 @@
 
 <script setup>
 import addBrew from "../../composables/addBrew";
+import uploadImg from "../../composables/fileUpload/uploadImg";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 
@@ -33,6 +34,7 @@ const coffee = JSON.parse(props.coffee);
 const method = JSON.parse(props.method);
 const imgSrc = ref("");
 const imgAlt = ref("");
+const imgFile = ref(null);
 
 const onFile = (e) => {
   error.value = "";
@@ -42,14 +44,13 @@ const onFile = (e) => {
   const fileType = files[0].type.toString().split("/");
 
   if (fileType[0] != "image") {
-    // imgSrc.value = "";
     error.value = "File must be an image";
-    // return;
   }
 
   imgSrc.value = files[0].name;
 
   // how to save into folder?
+  imgFile.value = files[0];
 };
 
 const addNewBrew = () => {
@@ -61,20 +62,20 @@ const addNewBrew = () => {
     return;
   }
 
-  addBrew({
-    coffee: coffee,
-    method: method,
-    img: { src: imgSrc.value, alt: imgAlt.value },
-    isFave: false,
-  });
+  try {
+    uploadImg(imgFile.value);
 
-  router.push({ name: "Home" });
-  // console.log({
-  //   coffee: coffee,
-  //   method: method,
-  //   img: { src: imgSrc.value, alt: imgAlt.value },
-  //   isFave: false,
-  // });
+    addBrew({
+      coffee: coffee,
+      method: method,
+      img: { src: imgSrc.value, alt: imgAlt.value },
+      isFave: false,
+    });
+
+    router.push({ name: "Home" });
+  } catch (err) {
+    console.log(err);
+  }
 };
 </script>
 
