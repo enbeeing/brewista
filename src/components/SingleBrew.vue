@@ -1,10 +1,7 @@
 <template>
   <article class="brew">
     <header>
-      <img
-        :src="require(`../assets/images/${brew.img.src}`)"
-        :alt="brew.img.alt"
-      />
+      <img :src="`./images/${brew.img.src}`" :alt="brew.img.alt" />
       <div class="fave" @click="toggleFave">
         <svg
           v-if="brew.isFave"
@@ -52,6 +49,7 @@
 <script setup>
 import MethodSymbolRow from "./MethodSymbolRow.vue";
 import updateBrew from "../composables/updateBrew";
+import { ref } from "vue";
 
 const props = defineProps({
   brew: Object,

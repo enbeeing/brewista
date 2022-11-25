@@ -22,7 +22,7 @@ app.post('/upload', (req, res) => {
         dirname += dirnameSplit[i] + "\\";
     }
 
-    file.mv(`${dirname}/public/${file.name}`, function (err) {
+    file.mv(`${dirname}/public/images/${file.name}`, function (err) {
         if (err) {
             console.log(err);
             console.log(dirname);
