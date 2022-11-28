@@ -66,6 +66,5 @@ a > svg {
 
 .navbar .router-link-active svg {
   fill: var(--main-text-color);
-  list-style: square;
 }
 </style>

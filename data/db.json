@@ -100,7 +100,7 @@
         "alt": "",
         "src": "ColdBrew.jpg"
       },
-      "isFave": false,
+      "isFave": true,
       "id": 1
     },
     {
@@ -131,7 +131,7 @@
         "alt": "",
         "src": "AearoPressBrew.jpg"
       },
-      "isFave": true,
+      "isFave": false,
       "id": 2
     }
   ]

@@ -4,12 +4,7 @@
       <p>{{ error }}</p>
     </div>
 
-    <Header title="Post Brew" />
-    <!-- send home true to the header, 
-      show home btn instead of back arrow -->
-    <!-- add leave/home button, 
-      ask if they are sure and
-      inform that they'll loose all the brew data -->
+    <Header title="Post Brew" to="Home" />
 
     <form class="add-brew-form content-wrapper">
       <h4>Upload image</h4>
