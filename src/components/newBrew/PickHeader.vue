@@ -2,8 +2,8 @@
   <header class="pick-header">
     <div class="warning" v-if="show">
       <h3>Are you sure?</h3>
-      <p>Going back to Homepage</p>
-      <p>You'll lose all data from current brew</p>
+      <p>Headed back to Homepage.</p>
+      <p>You'll lose all data from current brew.</p>
       <div>
         <button @click="leavePage">Leave</button>
         <button @click="stayOnPage">Stay</button>
@@ -71,13 +71,14 @@ const stayOnPage = () => {
 }
 
 .pick-header .warning > * {
-  padding: 2px 0;
+  padding: 5px 0;
 }
 
 .pick-header .warning div {
   display: flex;
   justify-content: space-evenly;
   align-content: center;
+  padding-top: 10px;
 }
 
 .pick-header {
