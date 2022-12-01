@@ -6,7 +6,6 @@
 
     <Header title="Post Brew" to="Home" />
 
-    <!-- <div class="add-brew-form content-wrapper"> -->
     <form class="add-brew-form content-wrapper">
       <h4>Upload image</h4>
       <label class="sr-only" for="img">Image upload</label>
@@ -15,7 +14,7 @@
       <input type="text" id="alt" v-model="imgAlt" />
       <button class="add-brew" @click.prevent="addNewBrew">Add image</button>
     </form>
-    <!-- </div> -->
+
     <div>
       <h4>Chosen Method</h4>
       <SingleMethod :method="method" v-if="method" />
@@ -70,21 +69,23 @@ const onFile = (e) => {
 };
 
 const addNewBrew = () => {
-  if (!error.value) {
-    try {
-      uploadImg(imgFile.value);
+  if (error.value) {
+    return;
+  }
 
-      addBrew({
-        coffee: coffee,
-        method: method,
-        img: { src: imgSrc.value, alt: imgAlt.value },
-        isFave: false,
-      });
+  try {
+    uploadImg(imgFile.value);
 
-      router.push({ name: "Home" });
-    } catch (err) {
-      console.log(err);
-    }
+    addBrew({
+      coffee: coffee,
+      method: method,
+      img: { src: imgSrc.value, alt: imgAlt.value },
+      isFave: false,
+    });
+
+    router.push({ name: "Home" });
+  } catch (err) {
+    console.log(err);
   }
 };
 </script>

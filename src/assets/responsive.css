@@ -8,6 +8,47 @@
     #app {
         width: 400px;
     }
+
+    /* homeView */
+    .home h1 {
+        font-size: 2.1rem;
+    }
+    .home main > p {
+        font-size: 1rem;
+    }
+
+    /* singleBrew  */
+    .brew header img {
+        max-height: 175px;
+    }
+    .brew header .fave {
+        width: 35px;
+        height: 35px;
+        top: 18px;
+        left: 18px;
+    }
+    .brew .brew-description h3 {
+        font-size: 1.2rem;
+    }
+    .brew .brew-description p {
+        font-size: .9rem;
+    }
+
+    .brew-method-icon {
+        width: 40px;
+        height: 65px;
+    }
+    .brew-coffee {
+        gap: 10px;
+    }
+
+    #app .brew-method-symbols > p {
+        font-size: .8rem;
+    }
+    .brew-method-symbols .method-icon {
+        height: .9rem;
+        width: 1.2rem;
+    }
 }
 
 @media screen and (min-width: 650px) {
