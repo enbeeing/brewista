@@ -10,7 +10,7 @@
           stroke-width="2"
         >
           <g transform="translate(-68 -13)">
-            <g transform="translate(71 15)">
+            <g transform="translate(71 16)">
               <path
                 class="a"
                 d="M.327,7.361l7.8-7.1A1,1,0,0,1,9.452.241l8.2,7.12a1.01,1.01,0,0,1,.345.76v9.54a1,1,0,0,1-1,1H1a1,1,0,0,1-1-1V8.1A1,1,0,0,1,.327,7.361Z"
