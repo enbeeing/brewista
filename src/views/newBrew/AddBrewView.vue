@@ -12,7 +12,7 @@
       <input type="file" @change="onFile" id="img" required />
       <label for="alt">Describe image: </label>
       <input type="text" id="alt" v-model="imgAlt" />
-      <button class="add-brew" @submit="addNewBrew">Add</button>
+      <button class="add-brew" @submit="addNewBrew">Add image</button>
     </form>
 
     <div>
@@ -129,6 +129,23 @@ const addNewBrew = () => {
 
 .add-brew-form label {
   font-size: 0.9rem;
+}
+
+.add-brew-form input {
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.add-brew-form input:last-of-type {
+  padding: 3px 5px;
+  border: 1px solid var(--light-medium-text-color);
+}
+
+.add-brew-form button {
+  padding: 3px;
+  background: var(--brew-bg-color);
+  border: 1px solid var(--light-medium-text-color);
+  border-radius: 5px;
 }
 
 .add-brew .coffee,
