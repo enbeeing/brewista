@@ -6,23 +6,24 @@
 
     <Header title="Post Brew" to="Home" />
 
+    <!-- <div class="add-brew-form content-wrapper"> -->
     <form class="add-brew-form content-wrapper">
       <h4>Upload image</h4>
       <label class="sr-only" for="img">Image upload</label>
       <input type="file" @change="onFile" id="img" required />
       <label for="alt">Describe image: </label>
       <input type="text" id="alt" v-model="imgAlt" />
-      <button class="add-brew" @submit="addNewBrew">Add image</button>
+      <button class="add-brew" @click.prevent="addNewBrew">Add image</button>
     </form>
-
+    <!-- </div> -->
     <div>
       <h4>Chosen Method</h4>
-      <SingleMethod :method="method" />
+      <SingleMethod :method="method" v-if="method" />
     </div>
 
     <div>
       <h4>Chosen Coffee</h4>
-      <SingleCoffee :coffee="coffee" />
+      <SingleCoffee :coffee="coffee" v-if="coffee" />
     </div>
   </div>
 </template>
@@ -41,16 +42,19 @@ const props = defineProps({
   method: String,
 });
 
+// safe in local history/as cookies instead of passing back and forth
+const coffee = props.coffee ? JSON.parse(props.coffee) : null;
+const method = props.method ? JSON.parse(props.method) : null;
+
 const router = useRouter();
-const error = ref("");
-const coffee = JSON.parse(props.coffee);
-const method = JSON.parse(props.method);
+
+const error = ref(null);
 const imgSrc = ref("");
 const imgAlt = ref("");
 const imgFile = ref(null);
 
 const onFile = (e) => {
-  error.value = "";
+  error.value = null;
   const files = e.target.files;
   if (!files.length) return;
 
@@ -66,27 +70,21 @@ const onFile = (e) => {
 };
 
 const addNewBrew = () => {
-  if (error.value != "") {
-    return;
-  }
-  if (imgSrc.value == "") {
-    error.value = "File is required";
-    return;
-  }
+  if (!error.value) {
+    try {
+      uploadImg(imgFile.value);
 
-  try {
-    uploadImg(imgFile.value);
+      addBrew({
+        coffee: coffee,
+        method: method,
+        img: { src: imgSrc.value, alt: imgAlt.value },
+        isFave: false,
+      });
 
-    addBrew({
-      coffee: coffee,
-      method: method,
-      img: { src: imgSrc.value, alt: imgAlt.value },
-      isFave: false,
-    });
-
-    router.push({ name: "Home" });
-  } catch (err) {
-    console.log(err);
+      router.push({ name: "Home" });
+    } catch (err) {
+      console.log(err);
+    }
   }
 };
 </script>
@@ -109,7 +107,7 @@ const addNewBrew = () => {
 
 .add-brew > div > h4 {
   text-align: center;
-  margin-bottom: -1rem;
+  /* margin-bottom: -1rem; */
 }
 
 .add-brew-form {
@@ -149,7 +147,12 @@ const addNewBrew = () => {
 }
 
 .add-brew .coffee,
-.add-brew .method {
+.add-brew .coffee:hover,
+.add-brew .coffee:focus,
+.add-brew .method,
+.add-brew .method:hover,
+.add-brew .method:focus {
   cursor: default;
+  filter: none;
 }
 </style>

@@ -2,7 +2,7 @@
   <div class="new-brew guide">
     <header>
       <img
-        src="../../../assets/images/guide/3.png"
+        :src="require(`../../../assets/images/guide/${imgSrc}`)"
         alt="Water pouring into a coffee filter"
       />
     </header>
@@ -26,4 +26,7 @@ const props = defineProps({
   coffee: String,
   method: String,
 });
+
+const isMobile = window.innerWidth < 400;
+const imgSrc = isMobile ? "3.png" : "3-large.png";
 </script>

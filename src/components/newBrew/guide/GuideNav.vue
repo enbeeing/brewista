@@ -89,8 +89,8 @@ const nextStep = () => {
   align-items: center;
   position: absolute;
   bottom: 2.2rem;
-  left: 2rem;
-  right: 2rem;
+  width: calc(100% - 4rem);
+  max-width: calc(400px - 4rem);
 }
 
 .dots {

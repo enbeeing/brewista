@@ -58,6 +58,12 @@ header > h3,
 }
 
 /* guide step views*/
+.guide {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
 .guide header {
   padding-bottom: 2.2rem;
   margin: .5rem 0;
@@ -103,8 +109,19 @@ button,
 .dots svg, 
 input[type=file] {
   cursor: pointer;
+  transition: .3s;
 }
 
+/* hover and focus */
+.coffee:hover, .coffee:focus, 
+.method:hover, .method:focus, 
+/* button:hover, button:focus,  */
+.fave:hover, .fave:focus, 
+/* .arrow:hover, .arrow:focus,  */
+/* .dots svg:hover, .dots svg:focus,  */
+input[type=file]:hover, input[type=file]:focus {
+  filter: brightness(90%);
+} 
 
   /* sr-only */
 .sr-only {

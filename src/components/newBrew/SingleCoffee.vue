@@ -69,6 +69,10 @@ const darkClass = props.coffee.id % 2 == 1;
   margin: 2rem 0;
 }
 
+.coffee img {
+  max-width: 100%;
+}
+
 .description p {
   margin: 1rem 0 1.5rem 0;
   color: var(--light-medium-text-color);

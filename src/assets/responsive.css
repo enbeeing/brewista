@@ -1,4 +1,4 @@
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 400px) {
     body {
         display: flex;
         justify-content: center;
@@ -6,6 +6,18 @@
     }
 
     #app {
-        min-width: 500px;
+        width: 400px;
+    }
+}
+
+@media screen and (min-width: 650px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #app {
+        max-width: 400px;
     }
 }

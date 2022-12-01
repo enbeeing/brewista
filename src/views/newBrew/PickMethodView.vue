@@ -34,6 +34,3 @@ const picked = (method) => {
   });
 };
 </script>
-
-<style>
-</style>
