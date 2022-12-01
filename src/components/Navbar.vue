@@ -52,7 +52,7 @@
   align-items: flex-start;
   background: var(--main-bg-color);
   box-shadow: 0 -3px 15px var(--shadow-color);
-  /* max-height: 60px; */
+  max-height: 60px;
 }
 
 .navbar a {
@@ -66,7 +66,7 @@
 
 .navbar a > svg {
   height: 1.2rem;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .navbar .router-link-active svg {
@@ -81,5 +81,7 @@
   width: 3px;
   height: 3px;
   border-radius: 50%;
+  position: absolute;
+  bottom: 1rem;
 }
 </style>
