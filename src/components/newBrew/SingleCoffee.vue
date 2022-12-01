@@ -1,5 +1,4 @@
 <template>
-  <!-- use binding for alternating dark/light colors -->
   <article :class="{ dark: darkClass, coffee }" @click="emit('picked', coffee)">
     <header>
       <img
@@ -59,7 +58,7 @@ const props = defineProps({
 
 const emit = defineEmits(["picked"]);
 
-const darkClass = props.coffee.id % 2 != 0;
+const darkClass = props.coffee.id % 2 == 1;
 </script>
 
 <style>

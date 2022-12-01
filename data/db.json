@@ -73,7 +73,6 @@
   ],
   "brews": [
     {
-      "id": 1,
       "coffee": {
         "id": 1,
         "title": "KIENI ESPRESSO",
@@ -101,10 +100,10 @@
         "alt": "",
         "src": "ColdBrew.jpg"
       },
-      "isFave": false
+      "isFave": true,
+      "id": 1
     },
     {
-      "id": 2,
       "coffee": {
         "id": 2,
         "title": "KIENI",
@@ -132,38 +131,8 @@
         "alt": "",
         "src": "AearoPressBrew.jpg"
       },
-      "isFave": true
-    },
-    {
-      "coffee": {
-        "id": 2,
-        "title": "KIENI",
-        "description": "Saftig syrlighed med intens sødme. Fyldig og læskende med kompleks aroma af solbær, stikkelbær og brombær",
-        "process": "Washed",
-        "roastProfile": "Medium",
-        "varieties": [
-          "Castilo",
-          "Caturra"
-        ],
-        "country": "Guatemala"
-      },
-      "method": {
-        "id": 3,
-        "title": "Chemex",
-        "method": {
-          "gram": "16g",
-          "water": "230ml",
-          "grind": "Fine",
-          "time": "3min"
-        },
-        "svg": "#chemex"
-      },
-      "img": {
-        "src": "straw_hat_pirates.png",
-        "alt": "Test"
-      },
       "isFave": false,
-      "id": 3
+      "id": 2
     }
   ]
 }

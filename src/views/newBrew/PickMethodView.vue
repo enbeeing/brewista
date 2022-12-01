@@ -1,6 +1,6 @@
 <template>
   <div class="new-brew">
-    <PickHeader :title="'Combine with method'" />
+    <PickHeader :title="'Combine with method'" to="Coffee" />
     <section>
       <div v-for="method in methods" :key="method.title">
         <SingleMethod :method="method" @picked="picked" />
