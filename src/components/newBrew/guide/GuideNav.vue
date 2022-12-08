@@ -87,7 +87,7 @@ const nextStep = () => {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: calc(100% - 4rem);
+  width: calc(100% - 2rem);
   max-width: calc(400px - 4rem);
 }
 
