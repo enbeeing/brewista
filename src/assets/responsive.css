@@ -9,6 +9,12 @@
         width: 400px;
     }
 
+    /* method icon */
+    .brew-method-icon, .method-svg {
+        width: 40px;
+        height: 65px;
+    }
+
     /* homeView */
     .home h1 {
         font-size: 2.1rem;
@@ -33,21 +39,74 @@
     .brew .brew-description p {
         font-size: .9rem;
     }
-
-    .brew-method-icon {
-        width: 40px;
-        height: 65px;
-    }
+    
     .brew-coffee {
         gap: 10px;
     }
 
-    #app .brew-method-symbols > p {
-        font-size: .8rem;
-    }
-    .brew-method-symbols .method-icon {
+    /* methodSymbolRow */
+    .brew .brew-method-symbols .method-icon {
         height: .9rem;
         width: 1.2rem;
+    }
+
+    .brew-method-symbols .method-icon {
+        height: .8rem;
+    }
+
+    #app .brew-method-symbols > p {
+        font-size: .75rem;
+    }
+
+    /* pickHeader */
+    .pick-header button .back {
+        max-width: 30px;
+    }
+
+    .pick-header h3 {
+        font-size: 1.4rem;
+    }
+
+    /* singleCoffee */
+    .coffee .details h4,
+    .coffee .content-wrapper p,
+    .coffee .content-wrapper span {
+        font-size: .95rem;
+    }
+
+    /* singleMethod */
+    .method .method-content h3 {
+        font-size: 1.3rem;
+    }
+
+    /* addBrew */
+    .add-brew > div > h4, .add-brew-form h4 {
+        font-size: 1.2rem;
+    }
+
+    .add-brew .add-brew-form label {
+        font-size: 1rem;
+    }
+    
+    .add-brew-form button {
+        font-size: .9rem;
+    }
+
+    .add-brew-form input[type=file] {
+        font-size: .9rem;
+    }
+
+    /* guide */
+    .guide h2 {
+        font-size: 2.5rem;
+    }
+
+    .guide h3 {
+        font-size: 1.2rem;
+    }
+
+    .guide pre {
+        font-size: 1rem;
     }
 }
 

@@ -113,4 +113,8 @@ const darkClass = props.coffee.id % 2 == 1;
   font-size: 0.8rem;
   line-height: 1.1rem;
 }
+
+.coffee h3 {
+  text-transform: uppercase;
+}
 </style>

@@ -108,7 +108,6 @@ const addNewBrew = () => {
 
 .add-brew > div > h4 {
   text-align: center;
-  /* margin-bottom: -1rem; */
 }
 
 .add-brew-form {
