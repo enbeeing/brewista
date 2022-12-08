@@ -108,6 +108,16 @@
     .guide pre {
         font-size: 1rem;
     }
+
+    /* guideNav */
+    .dots svg {
+        height: 9px;
+        width: 9px;
+    }
+
+    .guide-nav .arrow svg {
+        height: 25px;
+    }
 }
 
 @media screen and (min-width: 650px) {
