@@ -34,12 +34,23 @@ img {
     width: 100%;
 }
 
+.home, .faves {
+  margin-bottom: 1rem;
+}
+
 .home, .faves, .new-brew {
     padding: 2.5rem 1.5rem;
 }
 
 .home >  header, .faves  > header, .new-brew > header {
     margin-bottom: 4rem;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 15px;
 }
 
 /* font-weight 400 */

@@ -27,7 +27,6 @@ const emit = defineEmits(["picked"]);
 <style>
 .method {
   background: var(--brew-bg-color);
-  margin: 2rem 0;
   border-radius: 25px;
   display: flex;
   justify-content: start;

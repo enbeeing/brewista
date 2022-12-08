@@ -66,7 +66,6 @@ const toggleFave = () => {
   border-radius: 25px;
   overflow: hidden;
   background: var(--brew-bg-color);
-  margin: 1rem 0 2rem 0;
 }
 
 /* header */
