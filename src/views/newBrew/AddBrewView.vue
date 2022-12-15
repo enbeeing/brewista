@@ -1,6 +1,12 @@
 <template>
   <div class="new-brew add-brew">
-    <Header class="add-brew-header" title="Post Brew" to="Home" />
+    <Header
+      class="add-brew-header"
+      title="Post Brew"
+      to="Home"
+      @click="error = null"
+    />
+    <!-- TODO: use an emit instead of click to reset error when clicking back arrow -->
 
     <form class="add-brew-form content-wrapper">
       <h4>Upload image</h4>
@@ -74,6 +80,7 @@ const onFile = (e) => {
 
 const addNewBrew = () => {
   if (!imgFile.value) {
+    error.value = "File is required";
     return;
   }
   if (error.value) {
