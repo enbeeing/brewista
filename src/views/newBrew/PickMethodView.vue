@@ -1,7 +1,7 @@
 <template>
   <div class="new-brew">
     <PickHeader :title="'Combine with method'" to="Coffee" />
-    <section>
+    <section class="list">
       <div v-for="method in methods" :key="method.title">
         <SingleMethod :method="method" @picked="picked" />
       </div>
@@ -34,6 +34,3 @@ const picked = (method) => {
   });
 };
 </script>
-
-<style>
-</style>

@@ -1,5 +1,5 @@
 <template>
-  <section class="brew-list">
+  <section class="brew-list list">
     <div v-for="brew in brews.slice().reverse()" :key="brew.id">
       <SingleBrew :brew="brew" />
     </div>

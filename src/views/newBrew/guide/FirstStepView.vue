@@ -1,7 +1,10 @@
 <template>
   <div class="new-brew guide">
     <header>
-      <img src="../../../assets/images/guide/1.png" alt="Coffee equipment" />
+      <img
+        :src="require(`../../../assets/images/guide/${imgSrc}`)"
+        alt="Coffee equipment"
+      />
     </header>
     <div class="content">
       <h2>1</h2>
@@ -25,4 +28,7 @@ const props = defineProps({
   coffee: String,
   method: String,
 });
+
+const isMobile = window.innerWidth < 400;
+const imgSrc = isMobile ? "1.png" : "1-large.png";
 </script>

@@ -20,6 +20,11 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+#app {
+  min-height: 100vh;
 }
 
 body {
@@ -30,12 +35,23 @@ img {
     width: 100%;
 }
 
+.home, .faves {
+  margin-bottom: 1rem;
+}
+
 .home, .faves, .new-brew {
     padding: 2.5rem 1.5rem;
 }
 
 .home >  header, .faves  > header, .new-brew > header {
     margin-bottom: 4rem;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 15px;
 }
 
 /* font-weight 400 */
@@ -58,6 +74,13 @@ header > h3,
 }
 
 /* guide step views*/
+.guide {
+display: flex;
+flex-direction: column;
+align-items: center;
+min-height: 100vh;
+}
+
 .guide header {
   padding-bottom: 2.2rem;
   margin: .5rem 0;
@@ -66,10 +89,11 @@ header > h3,
 .guide .content {
   display: grid;
   grid-template: 
-  "h2 h3" auto
+  "h2 h3" 3rem
   ". p" auto / 30px 1fr;
   gap: 1rem;
   margin: 0 .5rem;
+  flex-grow: 1;
 }
 
 .guide h2 {
@@ -92,6 +116,7 @@ header > h3,
   word-wrap: break-word;
   font-family: var(--main-font);
   font-size: .9rem;
+  margin-right: 10px;
 }
 
 /* curser */
@@ -103,8 +128,19 @@ button,
 .dots svg, 
 input[type=file] {
   cursor: pointer;
+  transition: .3s;
 }
 
+/* hover and focus */
+.coffee:hover, .coffee:focus, 
+.method:hover, .method:focus, 
+/* button:hover, button:focus,  */
+.fave:hover, .fave:focus, 
+/* .arrow:hover, .arrow:focus,  */
+/* .dots svg:hover, .dots svg:focus,  */
+input[type=file]:hover, input[type=file]:focus {
+  filter: brightness(90%);
+} 
 
   /* sr-only */
 .sr-only {

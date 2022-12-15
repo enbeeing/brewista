@@ -1,4 +1,4 @@
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 400px) {
     body {
         display: flex;
         justify-content: center;
@@ -6,6 +6,206 @@
     }
 
     #app {
-        min-width: 500px;
+        width: 400px;
+    }
+
+    /* method icon */
+    /* .brew-method-icon, .method-svg {
+        width: 40px;
+        height: 65px;
+    } */
+
+    /* homeView */
+    .home h1 {
+        font-size: 2.1rem;
+    }
+    .home main > p {
+        font-size: 1rem;
+    }
+
+    /* singleBrew  */
+    /* .brew header img {
+        max-height: 175px;
+    }
+    .brew header .fave {
+        width: 35px;
+        height: 35px;
+        top: 18px;
+        left: 18px;
+    }
+    .brew .brew-description h3 {
+        font-size: 1.2rem;
+    }
+    .brew .brew-description p {
+        font-size: .9rem;
+    }
+    
+    .brew-coffee {
+        gap: 10px;
+    } */
+
+    /* methodSymbolRow */
+    /* .brew .brew-method-symbols .method-icon {
+        height: .9rem;
+        width: 1.2rem;
+    }
+
+    .brew-method-symbols .method-icon {
+        height: .8rem;
+    }
+
+    #app .brew-method-symbols > p {
+        font-size: .75rem;
+    } */
+
+    /* pickHeader */
+    .pick-header button .back {
+        max-width: 30px;
+    }
+
+    .pick-header h3 {
+        font-size: 1.4rem;
+    }
+
+    /* singleCoffee */
+    /* .coffee .details h4,
+    .coffee .content-wrapper p,
+    .coffee .content-wrapper span {
+        font-size: .95rem;
+    } */
+
+    /* singleMethod */
+    /* .method .method-content h3 {
+        font-size: 1.3rem;
+    } */
+
+    /* addBrew */
+    /* .add-brew > div > h4, .add-brew-form h4 {
+        font-size: 1.2rem;
+    }
+
+    .add-brew .add-brew-form label {
+        font-size: 1rem;
+    }
+    
+    .add-brew-form button {
+        font-size: .9rem;
+    }
+
+    .add-brew-form input[type=file] {
+        font-size: .9rem;
+    } */
+
+    /* guide */
+    /* .guide h2 {
+        font-size: 2.5rem;
+    }
+
+    .guide h3 {
+        font-size: 1.2rem;
+    }
+
+    .guide pre {
+        font-size: 1rem;
+    } */
+
+    /* guideNav */
+
+
+    /* .dots svg {
+        height: 9px;
+        width: 9px;
+    }
+
+    .guide-nav .arrow svg {
+        height: 25px;
+    } */
+}
+
+@media screen and (min-width: 600px) {
+    #app {
+        width: 100%;
+        min-width: 600px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .list {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .new-brew {
+        width: 800px;
+    }
+
+    .guide {
+        max-width: 600px;
+    }
+
+    .add-brew {
+        display: grid;
+        grid-template: 
+            "header header" auto
+            "method form" auto
+            "coffee ." auto / 1fr 1fr;
+        gap: 15px;
+    }
+
+    .add-brew .error {
+        grid-area: header;
+    }
+
+    .add-brew-header {
+        grid-area: header;
+    }
+
+    .add-brew-form {
+        grid-area: form;
+        align-self: flex-start;
+    }
+
+    .add-brew > div:first-of-type {
+        grid-area: method;
+    }
+
+    .add-brew > div:nth-of-type(2) {
+        grid-area: coffee;
+    }
+
+    /* methodSymbolRow */
+    /* .brew .brew-method-symbols .method-icon {
+        height: .8rem;
+        width: 1rem;
+    }
+
+    .brew-method-symbols .method-icon {
+        height: .8rem;
+    }
+
+    #app .brew-method-symbols > p {
+        font-size: .7rem;
+    } */
+
+}
+
+@media screen and (min-width: 900px) {
+    #app {
+        min-width: 900px;
+        max-width: 1200px;
+    }
+
+    .list {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .new-brew {
+        width: 1100px;
+    }
+
+    .add-brew {
+        grid-template: 
+            "header header header" auto
+            "coffee method form" auto / 1fr 1fr 1fr;
     }
 }

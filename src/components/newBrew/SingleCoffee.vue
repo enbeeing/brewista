@@ -66,7 +66,12 @@ const darkClass = props.coffee.id % 2 == 1;
   background: var(--light-secondary-color);
   border-radius: 25px;
   overflow: hidden;
-  margin: 2rem 0;
+  height: 100%;
+}
+
+.coffee img {
+  max-width: 100%;
+  height: 80px;
 }
 
 .description p {
@@ -108,5 +113,9 @@ const darkClass = props.coffee.id % 2 == 1;
 .coffee span {
   font-size: 0.8rem;
   line-height: 1.1rem;
+}
+
+.coffee h3 {
+  text-transform: uppercase;
 }
 </style>

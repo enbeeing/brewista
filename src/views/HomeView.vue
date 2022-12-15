@@ -81,5 +81,6 @@ main > p {
   font-size: 0.95rem;
   color: var(--medium-text-color);
   font-weight: bold;
+  margin-bottom: 1rem;
 }
 </style>

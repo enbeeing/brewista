@@ -1,7 +1,7 @@
 <template>
   <div class="new-brew">
     <PickHeader :title="'Pick your coffee'" to="Home" />
-    <section>
+    <section class="list">
       <div v-for="coffee in coffees" :key="coffee.title">
         <SingleCoffee :coffee="coffee" @picked="picked" />
       </div>
