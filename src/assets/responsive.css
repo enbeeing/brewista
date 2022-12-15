@@ -152,6 +152,10 @@
         gap: 15px;
     }
 
+    .add-brew .error {
+        grid-area: header;
+    }
+
     .add-brew-header {
         grid-area: header;
     }

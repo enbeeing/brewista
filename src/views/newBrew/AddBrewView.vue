@@ -1,9 +1,5 @@
 <template>
   <div class="new-brew add-brew">
-    <div class="error" v-if="error">
-      <p>{{ error }}</p>
-    </div>
-
     <Header class="add-brew-header" title="Post Brew" to="Home" />
 
     <form class="add-brew-form content-wrapper">
@@ -11,7 +7,7 @@
       <label class="sr-only" for="img">Image upload</label>
       <input type="file" @change="onFile" id="img" required />
       <label for="alt">Describe image: </label>
-      <input type="text" id="alt" v-model="imgAlt" />
+      <input type="text" id="alt" v-model="img.alt" />
       <button @click.prevent="addNewBrew">Add image</button>
     </form>
 
@@ -23,6 +19,10 @@
     <div>
       <h4>Chosen Coffee</h4>
       <SingleCoffee :coffee="coffee" v-if="coffee" />
+    </div>
+
+    <div class="error" v-if="error">
+      <p>{{ error }}</p>
     </div>
   </div>
 </template>
@@ -48,9 +48,11 @@ const method = props.method ? JSON.parse(props.method) : null;
 const router = useRouter();
 
 const error = ref(null);
-const imgSrc = ref("");
-const imgAlt = ref("");
 const imgFile = ref(null);
+const img = ref({
+  src: null,
+  alt: "",
+});
 
 const onFile = (e) => {
   error.value = null;
@@ -61,14 +63,19 @@ const onFile = (e) => {
 
   if (fileType[0] != "image") {
     error.value = "File must be an image";
+    return;
   }
 
-  imgSrc.value = files[0].name;
+  // imgSrc.value = files[0].name;
+  img.value.src = files[0].name;
 
   imgFile.value = files[0];
 };
 
 const addNewBrew = () => {
+  if (!imgFile.value) {
+    return;
+  }
   if (error.value) {
     return;
   }
@@ -79,7 +86,7 @@ const addNewBrew = () => {
     addBrew({
       coffee: coffee,
       method: method,
-      img: { src: imgSrc.value, alt: imgAlt.value },
+      img: img.value,
       isFave: false,
     });
 
@@ -92,7 +99,7 @@ const addNewBrew = () => {
 
 <style>
 .add-brew .error {
-  position: absolute;
+  position: fixed;
   top: 2.5rem;
   left: 0;
   right: 0;

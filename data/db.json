@@ -133,37 +133,6 @@
       },
       "isFave": false,
       "id": 2
-    },
-    {
-      "coffee": {
-        "id": 1,
-        "title": "KIENI ESPRESSO",
-        "description": "En frugtbombe af en espresso med aroma af brombær, solbær, stikkelbær og fyldig, olieret afslutning.",
-        "process": "Washed",
-        "roastProfile": "Medium",
-        "varieties": [
-          "Castilo",
-          "Caturra"
-        ],
-        "country": "Guatemala"
-      },
-      "method": {
-        "id": 2,
-        "title": "Cold Infusion",
-        "method": {
-          "gram": "40g",
-          "water": "200ml",
-          "grind": "Coarse",
-          "time": "2 timer"
-        },
-        "svg": "#infusion"
-      },
-      "img": {
-        "src": "",
-        "alt": ""
-      },
-      "isFave": false,
-      "id": 3
     }
   ]
 }
