@@ -87,8 +87,8 @@ const nextStep = () => {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: calc(100% - 2rem);
-  max-width: calc(400px - 4rem);
+  width: 100%;
+  margin-top: 2rem;
 }
 
 .dots {
@@ -98,11 +98,14 @@ const nextStep = () => {
   gap: 10px;
 }
 
+.arrow {
+  padding: 0.7rem;
+}
+
 .arrow svg {
-  height: 22px;
+  height: 25px;
   width: 50px;
   transform: translateY(2px);
-  padding: 1rem;
 }
 
 .guide-nav .a,

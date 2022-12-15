@@ -55,6 +55,10 @@ const props = defineProps({
   brew: Object,
 });
 
+if (!props.brew.img.src) {
+  props.brew.img.src = "img.svg";
+}
+
 const toggleFave = () => {
   props.brew.isFave = !props.brew.isFave;
   updateBrew(props.brew);
@@ -74,7 +78,7 @@ const toggleFave = () => {
 }
 
 .brew img {
-  max-height: 150px;
+  max-height: 175px;
   object-fit: cover;
 }
 

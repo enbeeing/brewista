@@ -4,7 +4,7 @@
       <p>{{ error }}</p>
     </div>
 
-    <Header title="Post Brew" to="Home" />
+    <Header class="add-brew-header" title="Post Brew" to="Home" />
 
     <form class="add-brew-form content-wrapper">
       <h4>Upload image</h4>
@@ -12,7 +12,7 @@
       <input type="file" @change="onFile" id="img" required />
       <label for="alt">Describe image: </label>
       <input type="text" id="alt" v-model="imgAlt" />
-      <button class="add-brew" @click.prevent="addNewBrew">Add image</button>
+      <button @click.prevent="addNewBrew">Add image</button>
     </form>
 
     <div>
@@ -108,12 +108,12 @@ const addNewBrew = () => {
 
 .add-brew > div > h4 {
   text-align: center;
+  padding: 1.8rem 0 1rem 0;
 }
 
 .add-brew-form {
   background: var(--brew-bg-color);
   border-radius: 25px;
-  margin: 2rem 0;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(5, auto);
