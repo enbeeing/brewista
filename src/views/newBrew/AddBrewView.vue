@@ -6,7 +6,6 @@
       to="Home"
       @click="error = null"
     />
-    <!-- TODO: use an emit instead of click to reset error when clicking back arrow -->
 
     <form class="add-brew-form content-wrapper">
       <h4>Upload image</h4>
@@ -42,14 +41,8 @@ import uploadImg from "../../composables/fileUpload/uploadImg";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 
-const props = defineProps({
-  coffee: String,
-  method: String,
-});
-
-// safe in local history/as cookies instead of passing back and forth
-const coffee = props.coffee ? JSON.parse(props.coffee) : null;
-const method = props.method ? JSON.parse(props.method) : null;
+const coffee = JSON.parse(localStorage.getItem("coffee"));
+const method = JSON.parse(localStorage.getItem("method"));
 
 const router = useRouter();
 
@@ -89,6 +82,10 @@ const addNewBrew = () => {
 
   try {
     uploadImg(imgFile.value);
+
+    if (!img.value.alt) {
+      img.value.alt = "Coffee image named: " + imgFile.value.name.split(".")[0];
+    }
 
     addBrew({
       coffee: coffee,

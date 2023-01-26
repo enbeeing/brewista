@@ -15,10 +15,6 @@ import SingleMethod from "../../components/newBrew/SingleMethod.vue";
 import getMethods from "../../composables/getMethods";
 import { useRouter } from "vue-router";
 
-const props = defineProps({
-  coffee: String,
-});
-
 const { methods, error, load } = getMethods();
 
 const router = useRouter();
@@ -28,9 +24,10 @@ const emit = defineEmits(["method"]);
 load();
 
 const picked = (method) => {
+  localStorage.setItem("method", JSON.stringify(method));
+
   router.push({
     name: "Guide1",
-    params: { coffee: props.coffee, method: JSON.stringify(method) },
   });
 };
 </script>

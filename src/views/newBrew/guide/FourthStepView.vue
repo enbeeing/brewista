@@ -16,17 +16,12 @@ If it gets to cold you can heat it back up in a microwave.
         </pre
       >
     </div>
-    <GuideNav :coffee="coffee" :method="method" />
+    <GuideNav />
   </div>
 </template>
 
 <script setup>
 import GuideNav from "../../../components/newBrew/guide/GuideNav.vue";
-
-const props = defineProps({
-  coffee: String,
-  method: String,
-});
 
 const isMobile = window.innerWidth < 400;
 const imgSrc = isMobile ? "4.png" : "4-large.png";

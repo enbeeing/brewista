@@ -22,6 +22,10 @@ load();
 const router = useRouter();
 
 const picked = (coffee) => {
-  router.push({ name: "Method", params: { coffee: JSON.stringify(coffee) } });
+  localStorage.setItem("coffee", JSON.stringify(coffee));
+
+  router.push({
+    name: "Method",
+  });
 };
 </script>
